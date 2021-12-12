@@ -25,17 +25,6 @@ enum	e_ft
 	GETHASH
 };
 
-typedef struct s_chrono	t_chrono;
-struct	s_chrono
-{
-	char		*ft_name;
-	clock_t		start;
-	clock_t		end;
-	uint32_t	count;
-	float		total_time;
-	float		avg_time;
-};
-
 /** @brief hash map */
 typedef struct s_map
 {
@@ -49,7 +38,6 @@ typedef struct s_data
 {
 	char			*key;
 	char			*value;
-	struct s_data	*next;
 }	t_data;
 
 /** @brief singleton */
@@ -61,12 +49,5 @@ typedef struct s_hr
 	t_data		data;
 	t_map		*hash_map[HASH_MAX];
 }	t_hr;
-
-/** @brief gnl */
-typedef struct s_set
-{
-	int				fd;
-	char			*str;
-}	t_set;
 
 #endif

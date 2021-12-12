@@ -20,26 +20,15 @@ typedef struct s_norm
 	int			ret;
 }	t_norm;
 
-typedef struct s_io
-{
-	size_t	to_get;
-	int		ret;
-	char	*line;
-}	t_io;
-
 static void	_save_data(size_t to_save, char *key_or_mapped)
 {
 	t_hr	*ptr;
 
 	ptr = sgt();
 	if (to_save % 2 == 1)
-	{
 		ptr->data.key = key_or_mapped;
-	}
 	else
-	{
 		set_map(ptr->data.key, key_or_mapped);
-	}
 }
 
 void	to_o(void)

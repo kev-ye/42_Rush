@@ -47,10 +47,6 @@
 # define TRUE 1
 # define FALSE 0
 
-/** @brief return define */
-# define SUCCESSE 0
-# define FAILURE 1
-
 /** @brief syscall error */
 # define SYSCALL_ERROR -1
 
@@ -61,9 +57,5 @@
 # include <stdint.h>
 # include <stdbool.h>
 # include <stdlib.h>
-
-// for test -> delete later ...
-# include <time.h>
-# include <stdio.h>
 
 #endif

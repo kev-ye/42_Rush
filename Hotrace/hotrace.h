@@ -38,8 +38,6 @@ void		*ft_calloc(size_t count, size_t size);
 size_t		ft_strlen(const char *s);
 void		ft_putstr_fd(char *s, int fd);
 int			ft_strcmp(const char *s1, const char *s2);
-char		*ft_strdup(const char *s1);
-char		*ft_substr(char const *s, unsigned int start, size_t len);
 
 /*
  * utils clean
@@ -51,14 +49,5 @@ void		clean(void);
  * utils programme
  */
 t_hr		*sgt(void);
-void		ft_lstadd_front(t_data **lst, t_data *new);
-int			ft_lstsize(t_data *lst);
-
-/*
- * time
- */
-void		chrono_start(enum e_ft ft_id);
-void		chrono_end(enum e_ft ft_id);
-void		chrono_display(void);
 
 #endif
