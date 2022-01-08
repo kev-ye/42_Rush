@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/08 20:09:02 by kaye              #+#    #+#             */
-/*   Updated: 2022/01/08 23:23:12 by kaye             ###   ########.fr       */
+/*   Updated: 2022/01/08 23:31:33 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,6 @@ int	launch_tests(void)
 	{
 		print_info(tmp);
 		fork_test(tmp);
-		exit(1);
 		tmp = tmp->next;
 	}
 	if (ptr->info.result_failure > 0)
