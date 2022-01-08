@@ -1,0 +1,8 @@
+{
+	"files.associations": {
+		"class.h": "c",
+		"libunit.h": "c",
+		"__locale": "c",
+		"real_tests.h": "c"
+	}
+}
