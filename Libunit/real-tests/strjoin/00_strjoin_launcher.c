@@ -1,21 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   01_strlen_basic_test.c                             :+:      :+:    :+:   */
+/*   00_strjoin_launcher.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: maddi <maddi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/08 22:15:47 by kaye              #+#    #+#             */
-/*   Updated: 2022/01/09 15:20:19 by kaye             ###   ########.fr       */
+/*   Created: 2022/01/09 17:58:51 by maddi             #+#    #+#             */
+/*   Updated: 2022/01/09 18:36:13 by maddi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "tests.h"
 
-int	strlen_basic_test(void)
+int	strjoin_launcher()
 {
-	if (ft_strlen("hello") == 5)
-		return (STATUS_SUCCESS);
-	else
-		return (STATUS_FAILURE);
+	load_test("strjoin", "basic test", &strjoin_basic_test);
+	load_test("strjoin", "null string test", &strjoin_null_string_test);
+	load_test("strjoin", "empty string test", &strjoin_empty_string_test);
 }

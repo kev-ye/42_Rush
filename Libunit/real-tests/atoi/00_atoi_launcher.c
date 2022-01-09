@@ -1,21 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   01_strlen_basic_test.c                             :+:      :+:    :+:   */
+/*   00_atoi_launcher.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/08 22:15:47 by kaye              #+#    #+#             */
-/*   Updated: 2022/01/09 15:20:19 by kaye             ###   ########.fr       */
+/*   Created: 2022/01/09 17:12:25 by kaye              #+#    #+#             */
+/*   Updated: 2022/01/09 17:16:04 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "tests.h"
 
-int	strlen_basic_test(void)
+int	atoi_launcher(void)
 {
-	if (ft_strlen("hello") == 5)
-		return (STATUS_SUCCESS);
-	else
-		return (STATUS_FAILURE);
+	load_test("atoi", "basic test", &atoi_basic_test);
+	load_test("atoi", "inmax test", &atoi_intmax_test);
+	load_test("atoi", "inmin test", &atoi_intmin_test);
+	load_test("atoi", "inmax overflow test", &atoi_intmax_overflow_test);
+	load_test("atoi", "inmin overflow test", &atoi_intmin_overflow_test);
+	return (launch_tests());
 }

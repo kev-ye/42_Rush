@@ -1,21 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   01_strlen_basic_test.c                             :+:      :+:    :+:   */
+/*   00_strchr_launcher.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: maddi <maddi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/08 22:15:47 by kaye              #+#    #+#             */
-/*   Updated: 2022/01/09 15:20:19 by kaye             ###   ########.fr       */
+/*   Created: 2022/01/09 18:15:54 by maddi             #+#    #+#             */
+/*   Updated: 2022/01/09 18:28:48 by maddi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "tests.h"
 
-int	strlen_basic_test(void)
+int	strchr_launcher(void)
 {
-	if (ft_strlen("hello") == 5)
-		return (STATUS_SUCCESS);
-	else
-		return (STATUS_FAILURE);
+	load_test("strchr", "basic test", &strchr_basic_test);
 }

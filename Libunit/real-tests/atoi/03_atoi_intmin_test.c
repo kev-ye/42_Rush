@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   01_strlen_basic_test.c                             :+:      :+:    :+:   */
+/*   03_atoi_intmin_test.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/08 22:15:47 by kaye              #+#    #+#             */
-/*   Updated: 2022/01/09 15:20:19 by kaye             ###   ########.fr       */
+/*   Created: 2022/01/09 17:17:19 by kaye              #+#    #+#             */
+/*   Updated: 2022/01/09 17:17:31 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "tests.h"
 
-int	strlen_basic_test(void)
+int	atoi_intmin_test(void)
 {
-	if (ft_strlen("hello") == 5)
+	if (atoi("-2147483648") == -2147483648)
 		return (STATUS_SUCCESS);
 	else
 		return (STATUS_FAILURE);

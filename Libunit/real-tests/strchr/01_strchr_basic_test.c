@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   real_tests.h                                       :+:      :+:    :+:   */
+/*   01_strchr_basic_test.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: maddi <maddi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/08 22:29:00 by kaye              #+#    #+#             */
-/*   Updated: 2022/01/08 23:10:24 by kaye             ###   ########.fr       */
+/*   Created: 2022/01/09 18:19:24 by maddi             #+#    #+#             */
+/*   Updated: 2022/01/09 18:22:20 by maddi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef REAL_TESTS_H
-# define REAL_TESTS_H
+#include "tests.h"
 
-#include "libft.h"
-#include "libunit.h"
-
-/**
- * @brief strlen tests
-*/
-int	strlen_launcher(void);
-int	strlen_basic_test(void);
-
-#endif
+int	strchr_basic_test(void)
+{
+	char	*str;
+	str = "aaabaab";
+	if (ft_strchr(str, 'b') == str + 4)
+		return (STATUS_SUCCESS);
+	else
+		return (STATUS_FAILURE);
+}

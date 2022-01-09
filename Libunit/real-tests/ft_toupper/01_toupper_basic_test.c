@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   01_strlen_basic_test.c                             :+:      :+:    :+:   */
+/*   01_toupper_basic_test.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: maddi <maddi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/08 22:15:47 by kaye              #+#    #+#             */
-/*   Updated: 2022/01/09 15:20:19 by kaye             ###   ########.fr       */
+/*   Created: 2022/01/09 17:46:39 by maddi             #+#    #+#             */
+/*   Updated: 2022/01/09 17:49:41 by maddi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "tests.h"
 
-int	strlen_basic_test(void)
+int	toupper_basic_test(void)
 {
-	if (ft_strlen("hello") == 5)
+	if (ft_toupper('a') == 'A')
 		return (STATUS_SUCCESS);
 	else
 		return (STATUS_FAILURE);

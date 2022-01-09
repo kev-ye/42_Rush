@@ -1,21 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   01_strlen_basic_test.c                             :+:      :+:    :+:   */
+/*   00_strcmp_launcher.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/08 22:15:47 by kaye              #+#    #+#             */
-/*   Updated: 2022/01/09 15:20:19 by kaye             ###   ########.fr       */
+/*   Created: 2022/01/09 16:55:04 by kaye              #+#    #+#             */
+/*   Updated: 2022/01/09 16:56:22 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "tests.h"
 
-int	strlen_basic_test(void)
+int	strcmp_launcher(void)
 {
-	if (ft_strlen("hello") == 5)
-		return (STATUS_SUCCESS);
-	else
-		return (STATUS_FAILURE);
+	load_test("strcmp", "basic test", &strcmp_basic_test);
+	load_test("strcmp", "null test", &strcmp_null_test);
+	return (launch_tests());
 }
