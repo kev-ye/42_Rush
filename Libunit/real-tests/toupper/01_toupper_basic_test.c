@@ -1,19 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   00_toupper_launcher.c                              :+:      :+:    :+:   */
+/*   01_toupper_basic_test.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maddi <maddi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/09 17:44:12 by maddi             #+#    #+#             */
-/*   Updated: 2022/01/09 18:02:05 by maddi            ###   ########.fr       */
+/*   Created: 2022/01/09 17:46:39 by maddi             #+#    #+#             */
+/*   Updated: 2022/01/09 20:43:50 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "tests.h"
+#include "real_tests.h"
 
-int	toupper_launcher(void)
+int	toupper_basic_test(void)
 {
-	load_test("toupper", "basic test", &toupper_basic_test);
-	load_test("toupper", "invalid char test", &toupper_invalid_char_test);
+	if (ft_toupper('a') == 'A')
+		return (STATUS_SUCCESS);
+	else
+		return (STATUS_FAILURE);
 }

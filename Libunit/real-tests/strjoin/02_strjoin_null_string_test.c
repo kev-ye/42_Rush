@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   02_strjoin_null_string_test.c                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maddi <maddi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 18:05:46 by maddi             #+#    #+#             */
-/*   Updated: 2022/01/09 18:08:09 by maddi            ###   ########.fr       */
+/*   Updated: 2022/01/09 20:43:37 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "tests.h"
+#include "real_tests.h"
 
 int	strjoin_null_string_test(void)
 {

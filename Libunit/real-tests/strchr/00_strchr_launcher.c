@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   00_strchr_launcher.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maddi <maddi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 18:15:54 by maddi             #+#    #+#             */
-/*   Updated: 2022/01/09 18:28:48 by maddi            ###   ########.fr       */
+/*   Updated: 2022/01/09 20:44:31 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "tests.h"
+#include "real_tests.h"
 
 int	strchr_launcher(void)
 {
 	load_test("strchr", "basic test", &strchr_basic_test);
+	return (launch_tests());
 }

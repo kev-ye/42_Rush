@@ -3,20 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   03_strjoin_empty_string_test.c                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maddi <maddi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 18:32:47 by maddi             #+#    #+#             */
-/*   Updated: 2022/01/09 18:33:36 by maddi            ###   ########.fr       */
+/*   Updated: 2022/01/09 20:47:58 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "tests.h"
+#include "real_tests.h"
 
 int	strjoin_empty_string_test(void)
 {
-	if (ft_strjoin("", "a") == "a"
-		&& ft_strjoin("a", "") == "a")
+	char	*s1;
+	char	*s2;
+
+	s1 = ft_strjoin("", "a");
+	s2 = ft_strjoin("a", "");
+	if (ft_strcmp(s1, "a") == 0 && ft_strcmp(s2, "a") == 0)
+	{
+		free(s1);
+		free(s2);
 		return (STATUS_SUCCESS);
+	}
 	else
 		return (STATUS_FAILURE);
 }

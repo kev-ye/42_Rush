@@ -6,11 +6,11 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 15:52:26 by kaye              #+#    #+#             */
-/*   Updated: 2022/01/09 17:07:12 by kaye             ###   ########.fr       */
+/*   Updated: 2022/01/09 20:43:29 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "tests.h"
+#include "real_tests.h"
 
 int	strcpy_basic_test(void)
 {

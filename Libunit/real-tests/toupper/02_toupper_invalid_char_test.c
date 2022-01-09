@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   02_toupper_invalid_char_test.c                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maddi <maddi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 17:50:53 by maddi             #+#    #+#             */
-/*   Updated: 2022/01/09 17:52:19 by maddi            ###   ########.fr       */
+/*   Updated: 2022/01/09 20:43:52 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "tests.h"
+#include "real_tests.h"
 
 int	toupper_invalid_char_test(void)
 {

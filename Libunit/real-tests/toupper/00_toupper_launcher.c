@@ -1,28 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   02_strcpy_bus_test.c                               :+:      :+:    :+:   */
+/*   00_toupper_launcher.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/09 15:47:58 by kaye              #+#    #+#             */
-/*   Updated: 2022/01/09 16:54:46 by kaye             ###   ########.fr       */
+/*   Created: 2022/01/09 17:44:12 by maddi             #+#    #+#             */
+/*   Updated: 2022/01/09 20:48:13 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "tests.h"
+#include "real_tests.h"
 
-int	strcpy_bus_test(void)
+int	toupper_launcher(void)
 {
-	char		*buffer1;
-	char		*buffer2;
-	char		*cpy;
-
-	buffer1 = "";
-	buffer2 = "hello";
-	cpy = ft_strcpy(buffer1, buffer2);
-	if (ft_strcmp(cpy, "hello") == 0)
-		return (STATUS_SUCCESS);
-	else
-		return (STATUS_FAILURE);
+	load_test("toupper", "basic test", &toupper_basic_test);
+	load_test("toupper", "invalid char test", &toupper_invalid_char_test);
+	return (launch_tests());
 }

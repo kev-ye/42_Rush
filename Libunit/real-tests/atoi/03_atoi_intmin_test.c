@@ -6,11 +6,11 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 17:17:19 by kaye              #+#    #+#             */
-/*   Updated: 2022/01/09 17:17:31 by kaye             ###   ########.fr       */
+/*   Updated: 2022/01/09 20:43:03 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "tests.h"
+#include "real_tests.h"
 
 int	atoi_intmin_test(void)
 {
