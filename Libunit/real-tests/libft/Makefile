@@ -6,7 +6,7 @@
 #    By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/04 16:59:07 by kaye              #+#    #+#              #
-#    Updated: 2021/11/19 15:26:48 by kaye             ###   ########.fr        #
+#    Updated: 2022/01/09 13:42:24 by kaye             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -128,7 +128,6 @@ all: $(NAME)
 clean:
 	@$(MAKE) -C $(PTF_DIR) clean
 	@rm -Rf $(BUILD)
-	@echo "$(B_RED)$(BUILD)$(NONE) : $(B_GREEN)Delete$(NONE)"
 
 fclean: clean
 	@$(MAKE) -C $(PTF_DIR) fclean

@@ -6,7 +6,7 @@
 #    By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/08 23:01:02 by kaye              #+#    #+#              #
-#    Updated: 2022/01/08 23:12:32 by kaye             ###   ########.fr        #
+#    Updated: 2022/01/09 13:43:42 by kaye             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,15 +58,15 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	@printf "$(CL_LINE)"
+	@echo "[1 / 2] - $(B_MAGENTA)LIBUNITOBJ$(NONE)"
 	@ar -rcs $@ $^
-	@echo "[1 / 1] - $(B_MAGENTA)$@$(NONE)"
+	@echo "[2 / 2] - $(B_MAGENTA)$@$(NONE)"
 
 # bonus: BFLAGS = 1
 # bonus: $(NAME)
 
 clean:
 	@rm -Rf $(BUILD)
-	@echo "$(B_RED)$(BUILD)$(NONE) : $(B_GREEN)Delete$(NONE)"
 
 fclean: clean
 	@rm -Rf $(NAME)

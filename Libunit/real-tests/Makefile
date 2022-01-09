@@ -6,7 +6,7 @@
 #    By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/08 22:35:18 by kaye              #+#    #+#              #
-#    Updated: 2022/01/08 23:18:07 by kaye             ###   ########.fr        #
+#    Updated: 2022/01/09 13:43:59 by kaye             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,12 +20,16 @@ BFLAGS	= 0
 # DIRECTORIES
 
 BUILD 			:= .build
+LFT_DIR			:= ./libft
+LUNIT_DIR		:= ../framework
 SRC_DIR 		:= strlen
 OBJ_DIR 		:= $(BUILD)/obj
 DIRS			:= $(OBJ_DIR) $(addprefix $(OBJ_DIR)/, $(SRC_DIR))
 
 # FILES
 
+LFT				:= libft.a
+LUNIT			:= libunit.a
 NAME			:= tests
 SRC				= main.c
 SUB_SRC			:= 00_strlen_launcher.c \
@@ -51,24 +55,27 @@ test: $(NAME)
 
 $(NAME): $(OBJ)
 	@printf "$(CL_LINE)"
-	@$(MAKE) -C ./libft
-	@cp ./libft/libft.a .
-	@$(MAKE) -C ../framework
-	@cp ../framework/libunit.a .
-	@$(CC) $(CFLAGS) $(IFLAGS) $(OBJ) -o $@ libft.a libunit.a
+	@echo "$(B_BLUE)>>> Libft$(NONE)"
+	@$(MAKE) -C $(LFT_DIR)
+	@cp $(LFT_DIR)/$(LFT) .
+	@echo "$(B_BLUE)>>> Libunit$(NONE)"
+	@$(MAKE) -C $(LUNIT_DIR)
+	@cp $(LUNIT_DIR)/$(LUNIT) .
+	@echo "$(B_BLUE)>>> Tests$(NONE)"
+	@$(CC) $(CFLAGS) $(IFLAGS) $(OBJ) -o $@ $(LFT) $(LUNIT)
 	@echo "[1 / 1] - $(B_MAGENTA)$@$(NONE)"
 
 clean:
-	@$(MAKE) -C ./libft clean
-	@$(MAKE) -C ../framework clean
+	@$(MAKE) -C $(LFT_DIR) clean 1>/dev/null
+	@$(MAKE) -C $(LUNIT_DIR) clean 1>/dev/null
 	@rm -Rf $(BUILD)
-	@echo "$(B_RED)$(BUILD)$(NONE) : $(B_GREEN)Delete$(NONE)"
+	@echo "$(B_RED)OBJ$(NONE) : $(B_GREEN)Delete$(NONE)"
 
 fclean: clean
-	@$(MAKE) -C ./libft fclean
-	@$(MAKE) -C ../framework fclean
-	@rm -Rf libft.a
-	@rm -Rf libunit.a
+	@$(MAKE) -C $(LFT_DIR) fclean
+	@$(MAKE) -C $(LUNIT_DIR) fclean
+	@rm -Rf $(LFT)
+	@rm -Rf $(LUNIT)
 	@rm -Rf $(NAME)
 	@echo "$(B_RED)$(NAME)$(NONE) : $(B_GREEN)Delete$(NONE)"
 
