@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/08 22:29:00 by kaye              #+#    #+#             */
-/*   Updated: 2022/01/09 17:14:19 by kaye             ###   ########.fr       */
+/*   Updated: 2022/01/09 19:50:33 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int	strlen_null_test(void);
 int	strcpy_launcher(void);
 int	strcpy_basic_test(void);
 int	strcpy_bus_test(void);
+int	strcpy_abrt_test(void);
 
 /**
  * @brief strcmp tests
@@ -46,6 +47,19 @@ int	atoi_intmax_test(void);
 int	atoi_intmin_test(void);
 int atoi_intmax_overflow_test(void);
 int atoi_intmin_overflow_test(void);
+int	atoi_divise_by_zero_test(void);
 
+/**
+ * @brief strdup tests
+*/
+int	strdup_launcher(void);
+int	strdup_basic_test(void);
+int	strdup_abrt_test(void);
+
+/**
+ * @brief loop infini tests
+*/
+int	infini_launcher(void);
+int	infini_loop_test(void);
 
 #endif

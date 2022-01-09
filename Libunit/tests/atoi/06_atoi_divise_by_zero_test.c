@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   function.h                                         :+:      :+:    :+:   */
+/*   06_atoi_divise_by_zero_test.c                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/09 15:15:49 by kaye              #+#    #+#             */
-/*   Updated: 2022/01/09 19:34:09 by kaye             ###   ########.fr       */
+/*   Created: 2022/01/09 19:49:33 by kaye              #+#    #+#             */
+/*   Updated: 2022/01/09 19:50:23 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FUNCTION_H
-# define FUNCTION_H
+#include "tests.h"
 
-#include <stdlib.h>
+int	atoi_divise_by_zero_test(void)
+{
+	int zero;
 
-unsigned long	ft_strlen(const char *s);
-int				ft_atoi(const char *str);
-char			*ft_strcpy(char *dst, const char *src);
-int				ft_strcmp(const char *s1, const char *s2);
-char			*ft_strdup(const char *s1);
-int				loop_infini(void);
-
-#endif
+	zero = 0;
+	if (atoi("42") / zero == 0)
+		return (STATUS_SUCCESS);
+	else
+		return (STATUS_FAILURE);
+}

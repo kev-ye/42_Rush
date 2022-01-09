@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tests.h                                            :+:      :+:    :+:   */
+/*   real_tests.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maddi <maddi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/08 22:29:00 by kaye              #+#    #+#             */
-/*   Updated: 2022/01/09 18:35:51 by maddi            ###   ########.fr       */
+/*   Updated: 2022/01/09 19:10:36 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TESTS_H
-# define TESTS_H
+#ifndef REAL_TESTS_H
+# define REAL_TESTS_H
 
 #include "libunit.h"
 #include "function.h"
