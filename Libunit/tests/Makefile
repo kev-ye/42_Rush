@@ -6,7 +6,7 @@
 #    By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/09 15:19:17 by kaye              #+#    #+#              #
-#    Updated: 2022/01/09 15:55:46 by kaye             ###   ########.fr        #
+#    Updated: 2022/01/09 17:19:39 by kaye             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,9 @@ BUILD 			:= .build
 LUNIT_DIR		:= ../framework
 SRC_DIR 		:= function_to_test \
 				   strlen \
-				   strcpy
+				   strcpy \
+				   strcmp \
+				   atoi
 OBJ_DIR 		:= $(BUILD)/obj
 DIRS			:= $(OBJ_DIR) $(addprefix $(OBJ_DIR)/, $(SRC_DIR))
 
@@ -44,6 +46,17 @@ SUB_SRC			:= 00_strcpy_launcher.c \
 				   01_strcpy_basic_test.c \
 				   02_strcpy_bus_test.c
 SRC				+= $(addprefix strcpy/, $(SUB_SRC))
+SUB_SRC			:= 00_strcmp_launcher.c \
+				   01_strcmp_basic_test.c \
+				   02_strcmp_null_test.c
+SRC				+= $(addprefix strcmp/, $(SUB_SRC))
+SUB_SRC			:= 00_atoi_launcher.c \
+				   01_atoi_basic_test.c \
+				   02_atoi_intmax_test.c \
+				   03_atoi_intmin_test.c \
+				   04_atoi_intmax_overflow_test.c \
+				   05_atoi_intmin_overflow_test.c
+SRC				+= $(addprefix atoi/, $(SUB_SRC))
 OBJ				:= $(SRC:%.c=$(OBJ_DIR)/%.o)
 
 # ANSCII CODE

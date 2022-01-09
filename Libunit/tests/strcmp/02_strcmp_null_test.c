@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   03_atoi_intmin_test.c                              :+:      :+:    :+:   */
+/*   02_strcmp_null_test.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/09 17:17:19 by kaye              #+#    #+#             */
-/*   Updated: 2022/01/09 17:17:31 by kaye             ###   ########.fr       */
+/*   Created: 2022/01/09 16:57:39 by kaye              #+#    #+#             */
+/*   Updated: 2022/01/09 16:57:54 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "tests.h"
 
-int	atoi_intmin_test(void)
+int	strcmp_null_test(void)
 {
-	if (atoi("-2147483648") == -2147483648)
+	if (ft_strcmp(NULL, NULL) == 0)
 		return (STATUS_SUCCESS);
 	else
 		return (STATUS_FAILURE);

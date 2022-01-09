@@ -6,7 +6,7 @@
 #    By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/08 22:35:18 by kaye              #+#    #+#              #
-#    Updated: 2022/01/09 15:30:35 by kaye             ###   ########.fr        #
+#    Updated: 2022/01/09 17:21:57 by kaye             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ DIRS			:= $(OBJ_DIR) $(addprefix $(OBJ_DIR)/, $(SRC_DIR))
 
 LFT				:= libft.a
 LUNIT			:= libunit.a
-NAME			:= tests
+NAME			:= real_tests
 SRC				:= main.c
 SUB_SRC			:= 00_strlen_launcher.c \
 				   01_strlen_basic_test.c

@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/08 22:17:05 by kaye              #+#    #+#             */
-/*   Updated: 2022/01/09 16:02:37 by kaye             ###   ########.fr       */
+/*   Updated: 2022/01/09 17:19:20 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,7 @@ int main(void)
 	status = 0;
 	status |= strlen_launcher();
 	status |= strcpy_launcher();
+	status |= strcmp_launcher();
+	status |= atoi_launcher();
 	return (status);
 }

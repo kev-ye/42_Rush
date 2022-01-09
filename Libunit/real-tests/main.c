@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/08 22:17:05 by kaye              #+#    #+#             */
-/*   Updated: 2022/01/08 23:10:47 by kaye             ###   ########.fr       */
+/*   Updated: 2022/01/09 17:21:29 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 int main(void)
 {
-	int status = strlen_launcher();
+	int status;
+	status = 0;
+	
+	status |= strlen_launcher();
 	return (status);
 }

@@ -6,11 +6,12 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/08 20:09:02 by kaye              #+#    #+#             */
-/*   Updated: 2022/01/09 16:13:03 by kaye             ###   ########.fr       */
+/*   Updated: 2022/01/09 17:12:05 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libunit.h"
+#include "stdio.h" // debug
 
 typedef struct s_info
 {
@@ -105,9 +106,9 @@ int	launch_tests(void)
 		tmp = tmp->next;
 	}
 	if (ptr->info.result_failure > 0)
-		ret = STATUS_SUCCESS;
-	else
 		ret = STATUS_FAILURE;
+	else
+		ret = STATUS_SUCCESS;
 	print_result();
 	unit_clean();
 	return (ret);
