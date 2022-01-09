@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/08 19:09:06 by kaye              #+#    #+#             */
-/*   Updated: 2022/01/09 16:23:06 by kaye             ###   ########.fr       */
+/*   Updated: 2022/01/09 20:59:33 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ static t_test	*create_new_test(
 	new_test->func = func;
 	return (new_test);
 }
-
 
 void	load_test(
 	char const *func_name,

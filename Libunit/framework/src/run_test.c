@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/08 20:09:02 by kaye              #+#    #+#             */
-/*   Updated: 2022/01/09 20:20:43 by kaye             ###   ########.fr       */
+/*   Updated: 2022/01/09 21:00:03 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ static void	handle_info(int status)
 
 static void	handle_status(int status)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (WIFEXITED(status) != FALSE)

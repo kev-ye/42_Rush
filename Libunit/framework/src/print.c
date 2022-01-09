@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 15:36:38 by kaye              #+#    #+#             */
-/*   Updated: 2022/01/09 20:23:20 by kaye             ###   ########.fr       */
+/*   Updated: 2022/01/09 20:59:41 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ void	print_result(void)
 }
 
 #if BONUS
+
 void	print_header(char *name)
 {
 	dprintf(STDOUT_FILENO,

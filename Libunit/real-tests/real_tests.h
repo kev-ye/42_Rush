@@ -6,15 +6,15 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/08 22:29:00 by kaye              #+#    #+#             */
-/*   Updated: 2022/01/09 19:10:36 by kaye             ###   ########.fr       */
+/*   Updated: 2022/01/09 21:05:26 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef REAL_TESTS_H
 # define REAL_TESTS_H
 
-#include "libunit.h"
-#include "function.h"
+# include "libunit.h"
+# include "function.h"
 
 /**
  * @brief strlen tests
@@ -44,14 +44,14 @@ int	atoi_launcher(void);
 int	atoi_basic_test(void);
 int	atoi_intmax_test(void);
 int	atoi_intmin_test(void);
-int atoi_intmax_overflow_test(void);
-int atoi_intmin_overflow_test(void);
+int	atoi_intmax_overflow_test(void);
+int	atoi_intmin_overflow_test(void);
 
 /**
  * @brief toupper tests
 */
-int toupper_launcher(void);
-int toupper_basic_test(void);
+int	toupper_launcher(void);
+int	toupper_basic_test(void);
 int	toupper_invalid_char_test(void);
 
 /**

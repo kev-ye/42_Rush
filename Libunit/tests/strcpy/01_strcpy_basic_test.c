@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 15:52:26 by kaye              #+#    #+#             */
-/*   Updated: 2022/01/09 17:07:12 by kaye             ###   ########.fr       */
+/*   Updated: 2022/01/09 21:02:53 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	strcpy_basic_test(void)
 {
-	char		buffer[6];
-	char		*cpy;
+	char	buffer[6];
+	char	*cpy;
 
 	cpy = ft_strcpy(buffer, "hello");
 	if (ft_strcmp(cpy, "hello") == 0)

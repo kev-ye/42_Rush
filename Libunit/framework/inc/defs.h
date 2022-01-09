@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/08 16:50:09 by kaye              #+#    #+#             */
-/*   Updated: 2022/01/09 18:30:50 by kaye             ###   ########.fr       */
+/*   Updated: 2022/01/09 20:58:34 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,10 +71,10 @@
 /**
  * @brief includes
  */
-#include <stdint.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <sys/wait.h>
+# include <stdint.h>
+# include <stdlib.h>
+# include <unistd.h>
+# include <sys/wait.h>
 
 # if defined(BONUS)
 #  include <stdio.h>

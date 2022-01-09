@@ -6,7 +6,7 @@
 #    By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/09 15:19:17 by kaye              #+#    #+#              #
-#    Updated: 2022/01/09 20:17:50 by kaye             ###   ########.fr        #
+#    Updated: 2022/01/09 21:04:18 by kaye             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,7 +43,6 @@ SUB_SRC			:= atoi.c \
 				   strcmp.c \
 				   strcpy.c \
 				   strlen.c \
-				   strdup.c \
 				   infini.c
 SRC				+= $(addprefix function_to_test/, $(SUB_SRC))
 SUB_SRC			:= 00_strlen_launcher.c \

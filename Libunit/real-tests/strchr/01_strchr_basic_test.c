@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 18:19:24 by maddi             #+#    #+#             */
-/*   Updated: 2022/01/09 20:55:32 by kaye             ###   ########.fr       */
+/*   Updated: 2022/01/09 21:06:12 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 int	strchr_basic_test(void)
 {
 	char	*str;
+
 	str = "aaabaab";
 	if (ft_strchr(str, 'b') == str + 3)
 		return (STATUS_SUCCESS);

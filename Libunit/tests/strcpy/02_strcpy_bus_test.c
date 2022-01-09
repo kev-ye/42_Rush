@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 15:47:58 by kaye              #+#    #+#             */
-/*   Updated: 2022/01/09 16:54:46 by kaye             ###   ########.fr       */
+/*   Updated: 2022/01/09 21:02:50 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	strcpy_bus_test(void)
 {
-	char		*buffer1;
-	char		*buffer2;
-	char		*cpy;
+	char	*buffer1;
+	char	*buffer2;
+	char	*cpy;
 
 	buffer1 = "";
 	buffer2 = "hello";

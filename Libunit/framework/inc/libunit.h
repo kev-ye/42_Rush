@@ -6,20 +6,21 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/08 16:50:12 by kaye              #+#    #+#             */
-/*   Updated: 2022/01/09 20:14:57 by kaye             ###   ########.fr       */
+/*   Updated: 2022/01/09 20:59:12 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBUNIT_H
 # define LIBUNIT_H
 
-#include "class.h"
-#include "defs.h"
+# include "class.h"
+# include "defs.h"
 
 /** 
  * @brief main function
  */
-void	load_test(char const *func_name, char const *test_name, int (*func)(void));
+void	load_test(char const *func_name,
+			char const *test_name, int (*func)(void));
 void	clean_tests(void);
 int		launch_tests(void);
 
@@ -30,6 +31,7 @@ void	print_info(t_test *curr_test);
 void	print_result(void);
 
 # if defined(BONUS)
+
 void	print_header(char *name);
 # endif
 

@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   function.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maddi <maddi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 15:15:49 by kaye              #+#    #+#             */
-/*   Updated: 2022/01/09 18:31:44 by maddi            ###   ########.fr       */
+/*   Updated: 2022/01/09 21:05:03 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FUNCTION_H
 # define FUNCTION_H
 
-#include <stdint.h>
-#include <stdio.h>
+# include <stdint.h>
+# include <stdio.h>
 
 unsigned long	ft_strlen(const char *s);
 int				ft_atoi(const char *str);
