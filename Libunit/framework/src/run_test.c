@@ -6,12 +6,11 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/08 20:09:02 by kaye              #+#    #+#             */
-/*   Updated: 2022/01/09 17:12:05 by kaye             ###   ########.fr       */
+/*   Updated: 2022/01/09 18:45:00 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libunit.h"
-#include "stdio.h" // debug
 
 typedef struct s_info
 {
@@ -19,17 +18,58 @@ typedef struct s_info
 	char	*status_msg;
 }	t_info;
 
+typedef struct s_sig
+{
+	int		sig;
+	int		status;
+}	t_sig;
+
+#if BONUS
+
 static const t_info	g_info[STATUS_MAX] = {
-	{STATUS_OK, "OK"},
-	{STATUS_KO, "KO"},
-	{STATUS_SIGSEGV, "SEGV"},
-	{STATUS_SIGBUS, "BUS"}
+{STATUS_OK, ANSCII_GREEN"OK"ANSCII_CLEAR},
+{STATUS_KO, ANSCII_RED"KO"ANSCII_CLEAR},
+{STATUS_SIGSEGV, ANSCII_YELLOW"SEGV"ANSCII_CLEAR},
+{STATUS_SIGBUS, ANSCII_YELLOW"BUS"ANSCII_CLEAR},
+{STATUS_SIGABRT, ANSCII_YELLOW"ABRT"ANSCII_CLEAR},
+{STATUS_SIGFPE, ANSCII_YELLOW"FPE"ANSCII_CLEAR},
+{STATUS_SIGPIPE, ANSCII_YELLOW"PIPE"ANSCII_CLEAR},
+{STATUS_SIGILL, ANSCII_YELLOW"ILL"ANSCII_CLEAR},
+{STATUS_TIMEOUT, ANSCII_YELLOW"TIMEOUT"ANSCII_CLEAR}
 };
+#else
+
+static const t_info	g_info[STATUS_MAX] = {
+{STATUS_OK, "OK"},
+{STATUS_KO, "KO"},
+{STATUS_SIGSEGV, "SEGV"},
+{STATUS_SIGBUS, "BUS"}
+};
+#endif
+
+#if BONUS
+
+static const t_sig	g_sig[STATUS_MAX] = {
+{SIGSEGV, STATUS_SIGSEGV},
+{SIGBUS, STATUS_SIGBUS},
+{SIGABRT, STATUS_SIGABRT},
+{SIGFPE, STATUS_SIGFPE},
+{SIGPIPE, STATUS_SIGPIPE},
+{SIGILL, STATUS_SIGILL},
+{SIGALRM, STATUS_TIMEOUT}
+};
+#else
+
+static const t_sig	g_sig[STATUS_MAX] = {
+{SIGSEGV, STATUS_SIGSEGV},
+{SIGBUS, STATUS_SIGBUS}
+};
+#endif
 
 static void	handle_info(int status)
 {
 	t_unit	*ptr;
-	int	i;
+	int		i;
 
 	i = 0;
 	ptr = unit_singleton(FALSE);
@@ -41,9 +81,14 @@ static void	handle_info(int status)
 				++ptr->info.result_success;
 			else
 				++ptr->info.result_failure;
-			unit_putstr_fd("[", STDOUT_FILENO);	
-			unit_putstr_fd(g_info[i].status_msg, STDOUT_FILENO);	
-			unit_putendl_fd("]", STDOUT_FILENO);
+			if (BONUS)
+				dprintf(STDOUT_FILENO, "[%s]\n", g_info[i].status_msg);
+			else
+			{
+				unit_putstr_fd("[", STDOUT_FILENO);
+				unit_putstr_fd(g_info[i].status_msg, STDOUT_FILENO);
+				unit_putendl_fd("]", STDOUT_FILENO);
+			}
 			return ;
 		}
 		++i;
@@ -52,20 +97,33 @@ static void	handle_info(int status)
 
 static void	handle_status(int status)
 {
+	int i;
+
+	i = 0;
 	if (WIFEXITED(status) != FALSE)
 	{
 		if (WEXITSTATUS(status) == 0)
 			handle_info(STATUS_OK);
+		else if (BONUS && WEXITSTATUS(status) == SIGALRM)
+			handle_info(STATUS_TIMEOUT);
 		else
 			handle_info(STATUS_KO);
 	}
 	if (WIFSIGNALED(status) == TRUE)
 	{
-		if (WTERMSIG(status) == SIGSEGV)
-			handle_info(STATUS_SIGSEGV);
-		else if (WTERMSIG(status) == SIGBUS)
-			handle_info(STATUS_SIGBUS);
+		while (i < SIG_MAX)
+		{
+			if (WTERMSIG(status) == g_sig[i].sig)
+				handle_info(g_sig[i].status);
+			++i;
+		}
 	}
+}
+
+static void	handle_exit(int signal)
+{
+	(void)signal;
+	exit(SIGALRM);
 }
 
 static void	fork_test(t_test *curr_test)
@@ -77,18 +135,17 @@ static void	fork_test(t_test *curr_test)
 	if (pid < 0)
 		exit(STATUS_FAILURE);
 	if (pid == 0)
+	{
+		if (BONUS)
+		{
+			signal(SIGALRM, handle_exit);
+			alarm(3);
+		}
 		exit(curr_test->func());
+	}
 	else
 		wait(&status);
 	handle_status(status);
-}
-
-static void	print_info(t_test *curr_test)
-{
-	unit_putstr_fd(curr_test->func_name, STDOUT_FILENO);
-	unit_putstr_fd(": ", STDOUT_FILENO);
-	unit_putstr_fd(curr_test->test_name, STDOUT_FILENO);
-	unit_putstr_fd(": ", STDOUT_FILENO);
 }
 
 int	launch_tests(void)

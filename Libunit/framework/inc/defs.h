@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/08 16:50:09 by kaye              #+#    #+#             */
-/*   Updated: 2022/01/09 15:41:27 by kaye             ###   ########.fr       */
+/*   Updated: 2022/01/09 18:30:50 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,11 +51,22 @@
 /**
  * @brief STATUS
  */
-# define STATUS_MAX 4
+# if defined(BONUS)
+#  define STATUS_MAX 9
+#  define SIG_MAX 7
+# else
+#  define STATUS_MAX 4
+#  define SIG_MAX 2
+# endif
 # define STATUS_OK 1
 # define STATUS_KO 2
 # define STATUS_SIGSEGV 3
 # define STATUS_SIGBUS 4
+# define STATUS_SIGABRT 5
+# define STATUS_SIGFPE 6
+# define STATUS_SIGPIPE 7
+# define STATUS_SIGILL 8
+# define STATUS_TIMEOUT 9
 
 /**
  * @brief includes
@@ -64,5 +75,9 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <sys/wait.h>
+
+# if defined(BONUS)
+#  include <stdio.h>
+# endif
 
 #endif

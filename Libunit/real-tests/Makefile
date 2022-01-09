@@ -6,7 +6,7 @@
 #    By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/08 22:35:18 by kaye              #+#    #+#              #
-#    Updated: 2022/01/09 17:21:57 by kaye             ###   ########.fr        #
+#    Updated: 2022/01/09 18:00:15 by kaye             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,7 @@
 CC		= clang
 CFLAGS	= -Wall -Wextra -Werror #-g3 -fsanitize=address
 IFLAGS	= -I. -I./libft/inc -I../framework/inc
+BFLAGS	= 0
 
 # DIRECTORIES
 
@@ -24,6 +25,11 @@ LUNIT_DIR		:= ../framework
 SRC_DIR 		:= strlen
 OBJ_DIR 		:= $(BUILD)/obj
 DIRS			:= $(OBJ_DIR) $(addprefix $(OBJ_DIR)/, $(SRC_DIR))
+
+# OTHER MAKE
+
+MAKELFT := $(LFT_DIR) all
+MAKEUNIT := $(LUNIT_DIR) all
 
 # FILES
 
@@ -50,15 +56,20 @@ B_CYAN 			= \033[1;36m
 
 # MAKEFILE
 
+all: $(NAME)
+
 test: $(NAME)
+
+bonus: BFLAGS = 1
+bonus: $(NAME)
 
 $(NAME): $(OBJ)
 	@printf "$(CL_LINE)"
 	@echo "$(B_BLUE)>>> Libft$(NONE)"
-	@$(MAKE) -C $(LFT_DIR)
+	@$(MAKE) -C $(MAKELFT)
 	@cp $(LFT_DIR)/$(LFT) .
 	@echo "$(B_BLUE)>>> Libunit$(NONE)"
-	@$(MAKE) -C $(LUNIT_DIR)
+	@$(MAKE) -C $(MAKEUNIT)
 	@cp $(LUNIT_DIR)/$(LUNIT) .
 	@echo "$(B_BLUE)>>> Tests$(NONE)"
 	@$(CC) $(CFLAGS) $(IFLAGS) $(OBJ) -o $@ $(LFT) $(LUNIT)

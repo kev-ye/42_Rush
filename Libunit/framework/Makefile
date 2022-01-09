@@ -6,7 +6,7 @@
 #    By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/08 23:01:02 by kaye              #+#    #+#              #
-#    Updated: 2022/01/09 15:43:40 by kaye             ###   ########.fr        #
+#    Updated: 2022/01/09 17:55:49 by kaye             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -64,8 +64,8 @@ $(NAME): $(OBJ)
 	@ar -rcs $@ $^
 	@echo "[2 / 2] - $(B_MAGENTA)$@$(NONE)"
 
-# bonus: BFLAGS = 1
-# bonus: $(NAME)
+bonus: BFLAGS = 1
+bonus: $(NAME)
 
 clean:
 	@rm -Rf $(BUILD)

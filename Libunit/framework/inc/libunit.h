@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/08 16:50:12 by kaye              #+#    #+#             */
-/*   Updated: 2022/01/09 16:11:44 by kaye             ###   ########.fr       */
+/*   Updated: 2022/01/09 18:07:10 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int		launch_tests(void);
 /** 
  * @brief print
  */
+void	print_info(t_test *curr_test);
 void	print_result(void);
 
 /** 

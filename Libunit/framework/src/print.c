@@ -6,11 +6,25 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 15:36:38 by kaye              #+#    #+#             */
-/*   Updated: 2022/01/09 16:13:10 by kaye             ###   ########.fr       */
+/*   Updated: 2022/01/09 18:40:41 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libunit.h"
+
+void	print_info(t_test *curr_test)
+{
+	if (BONUS)
+		dprintf(STDOUT_FILENO, ANSCII_CYAN"%s"ANSCII_CLEAR": %s: ",
+			curr_test->func_name, curr_test->test_name);
+	else
+	{
+		unit_putstr_fd(curr_test->func_name, STDOUT_FILENO);
+		unit_putstr_fd(": ", STDOUT_FILENO);
+		unit_putstr_fd(curr_test->test_name, STDOUT_FILENO);
+		unit_putstr_fd(": ", STDOUT_FILENO);
+	}
+}
 
 void	print_result(void)
 {
