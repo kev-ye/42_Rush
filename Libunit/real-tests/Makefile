@@ -6,7 +6,7 @@
 #    By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/09 15:19:17 by kaye              #+#    #+#              #
-#    Updated: 2022/01/09 20:56:57 by kaye             ###   ########.fr        #
+#    Updated: 2022/01/09 21:44:22 by kaye             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,7 @@
 CC		= clang
 CFLAGS	= -Wall -Wextra -Werror #-g3 -fsanitize=address
 IFLAGS	= -I. -I./libft/inc -I../framework/inc
+LFLAGS	= -L./libft -lft -L../framework -lunit
 BFLAGS	= 0
 
 # DIRECTORIES
@@ -97,12 +98,10 @@ $(NAME): $(OBJ)
 	@printf "$(CL_LINE)"
 	@echo "$(B_BLUE)>>> Libft$(NONE)"
 	@$(MAKE) -C $(MAKELFT)
-	@cp $(LFT_DIR)/$(LFT) .
 	@echo "$(B_BLUE)>>> Libunit$(NONE)"
 	@$(MAKE) -C $(MAKEUNIT)
-	@cp $(LUNIT_DIR)/$(LUNIT) .
 	@echo "$(B_BLUE)>>> Tests$(NONE)"
-	@$(CC) $(CFLAGS) $(IFLAGS) $(OBJ) -o $@ $(LFT) $(LUNIT)
+	@$(CC) $(CFLAGS) $(IFLAGS) $(OBJ) -o $@ $(LFLAGS)
 	@echo "[1 / 1] - $(B_MAGENTA)$@$(NONE)"
 
 clean:
@@ -114,8 +113,6 @@ clean:
 fclean: clean
 	@$(MAKE) -C $(LFT_DIR) fclean
 	@$(MAKE) -C $(LUNIT_DIR) fclean
-	@rm -Rf $(LFT)
-	@rm -Rf $(LUNIT)
 	@rm -Rf $(NAME)
 	@echo "$(B_RED)$(NAME)$(NONE) : $(B_GREEN)Delete$(NONE)"
 
@@ -126,6 +123,6 @@ re: fclean test
 $(BUILD):
 	@mkdir $@ $(DIRS)
 
-$(OBJ_DIR)/%.o:%.c | $(BUILD)
+$(OBJ_DIR)/%.o:%.c ../$(LUNIT_DIR)/$(LUNIT) ../$(LFT_DIR)/$(LFT) | $(BUILD)
 	@printf "$(CL_LINE)Compiling srcs object : $(B_CYAN)$< $(NONE)...\r"
 	@$(CC) $(CFLAGS) $(IFLAGS) -c $< -o $@ -D BONUS=$(BFLAGS)
