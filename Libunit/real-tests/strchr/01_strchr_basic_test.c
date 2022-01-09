@@ -6,17 +6,17 @@
 /*   By: maddi <maddi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 18:19:24 by maddi             #+#    #+#             */
-/*   Updated: 2022/01/09 18:22:20 by maddi            ###   ########.fr       */
+/*   Updated: 2022/01/09 19:35:53 by maddi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "tests.h"
+#include "real_tests.h"
 
 int	strchr_basic_test(void)
 {
 	char	*str;
 	str = "aaabaab";
-	if (ft_strchr(str, 'b') == str + 4)
+	if (ft_strchr(str, 'b') == str + 3)
 		return (STATUS_SUCCESS);
 	else
 		return (STATUS_FAILURE);

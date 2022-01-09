@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   00_strlen_launcher.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: maddi <maddi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/08 22:15:47 by kaye              #+#    #+#             */
-/*   Updated: 2022/01/09 15:47:47 by kaye             ###   ########.fr       */
+/*   Updated: 2022/01/09 19:14:27 by maddi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "tests.h"
+#include "real_tests.h"
 
 int	strlen_launcher(void)
 {

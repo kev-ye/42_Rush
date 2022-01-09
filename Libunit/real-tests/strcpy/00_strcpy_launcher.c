@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   00_strcpy_launcher.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: maddi <maddi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 15:47:26 by kaye              #+#    #+#             */
-/*   Updated: 2022/01/09 15:53:59 by kaye             ###   ########.fr       */
+/*   Updated: 2022/01/09 19:13:50 by maddi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "tests.h"
+#include "real_tests.h"
 
 int	strcpy_launcher(void)
 {

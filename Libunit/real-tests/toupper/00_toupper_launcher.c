@@ -1,21 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   01_infini_loop_test.c                              :+:      :+:    :+:   */
+/*   00_toupper_launcher.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: maddi <maddi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/08 22:15:47 by kaye              #+#    #+#             */
-/*   Updated: 2022/01/09 19:34:26 by kaye             ###   ########.fr       */
+/*   Created: 2022/01/09 17:44:12 by maddi             #+#    #+#             */
+/*   Updated: 2022/01/09 19:21:47 by maddi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "tests.h"
+#include "real_tests.h"
 
-int	infini_loop_test(void)
+int	toupper_launcher(void)
 {
-	if (loop_infini() == 1)
-		return (STATUS_SUCCESS);
-	else
-		return (STATUS_FAILURE);
+	load_test("toupper", "basic test", &toupper_basic_test);
+	load_test("toupper", "invalid char test", &toupper_invalid_char_test);
+	return (launch_tests());
 }

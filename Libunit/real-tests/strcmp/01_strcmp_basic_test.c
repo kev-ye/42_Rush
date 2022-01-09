@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   01_strcmp_basic_test.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: maddi <maddi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 16:56:59 by kaye              #+#    #+#             */
-/*   Updated: 2022/01/09 16:57:35 by kaye             ###   ########.fr       */
+/*   Updated: 2022/01/09 19:20:02 by maddi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "tests.h"
+#include "real_tests.h"
 
 int	strcmp_basic_test(void)
 {

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libunit.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: maddi <maddi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/08 16:50:12 by kaye              #+#    #+#             */
-/*   Updated: 2022/01/09 20:14:57 by kaye             ###   ########.fr       */
+/*   Updated: 2022/01/09 20:17:29 by maddi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,6 @@ int		launch_tests(void);
 void	print_info(t_test *curr_test);
 void	print_result(void);
 
-# if defined(BONUS)
-void	print_header(char *name);
-# endif
-
 /** 
  * @brief utils
  */
@@ -44,5 +40,9 @@ void	unit_bzero(void *s, size_t n);
 void	*unit_calloc(size_t count, size_t size);
 t_unit	*unit_singleton(BOOL free_flag);
 void	unit_clean(void);
-
+/** 
+ * @brief utils
+ */
+void	log_info(t_test *curr_test);
+int 	log_open();
 #endif

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   02_strcpy_bus_test.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: maddi <maddi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 15:47:58 by kaye              #+#    #+#             */
-/*   Updated: 2022/01/09 16:54:46 by kaye             ###   ########.fr       */
+/*   Updated: 2022/01/09 19:13:59 by maddi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "tests.h"
+#include "real_tests.h"
 
 int	strcpy_bus_test(void)
 {

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   00_atoi_launcher.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: maddi <maddi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 17:12:25 by kaye              #+#    #+#             */
-/*   Updated: 2022/01/09 17:16:04 by kaye             ###   ########.fr       */
+/*   Updated: 2022/01/09 19:13:30 by maddi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "tests.h"
+#include "real_tests.h"
 
 int	atoi_launcher(void)
 {

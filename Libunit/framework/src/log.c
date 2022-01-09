@@ -1,19 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   00_toupper_launcher.c                              :+:      :+:    :+:   */
+/*   log.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maddi <maddi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/09 17:44:12 by maddi             #+#    #+#             */
-/*   Updated: 2022/01/09 18:02:05 by maddi            ###   ########.fr       */
+/*   Created: 2022/01/09 20:00:46 by maddi             #+#    #+#             */
+/*   Updated: 2022/01/09 20:30:10 by maddi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "tests.h"
+#include "libunit.h"
+#include <fcntl.h>
 
-int	toupper_launcher(void)
+int	log_open()
 {
-	load_test("toupper", "basic test", &toupper_basic_test);
-	load_test("toupper", "invalid char test", &toupper_invalid_char_test);
+	int	fd;
+
+	fd = open("/Users/maddi/Documents/42_Rush/Libunit/real-tests/tests.log", O_CREAT | O_RDWR | S_IRWXU, 0666);
+	return (fd);
+}
+
+void	log_info(t_test *curr_test)
+{
+	int	fd;
+
+	fd = log_open();
+	unit_putstr_fd(curr_test->func_name, fd);
+	unit_putstr_fd(": ", fd);
+	unit_putstr_fd(curr_test->test_name, fd);
+	unit_putstr_fd(": ", fd);
+	//close(fd);
 }

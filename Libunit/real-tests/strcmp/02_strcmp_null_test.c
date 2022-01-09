@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   02_strcmp_null_test.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: maddi <maddi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 16:57:39 by kaye              #+#    #+#             */
-/*   Updated: 2022/01/09 16:57:54 by kaye             ###   ########.fr       */
+/*   Updated: 2022/01/09 19:20:08 by maddi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "tests.h"
+#include "real_tests.h"
 
 int	strcmp_null_test(void)
 {

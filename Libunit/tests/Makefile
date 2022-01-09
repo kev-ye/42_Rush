@@ -6,7 +6,7 @@
 #    By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/09 15:19:17 by kaye              #+#    #+#              #
-#    Updated: 2022/01/09 20:17:50 by kaye             ###   ########.fr        #
+#    Updated: 2022/01/09 18:01:50 by kaye             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,6 @@
 CC		= clang
 CFLAGS	= -Wall -Wextra -Werror #-g3 -fsanitize=address
 IFLAGS	= -I. -I../framework/inc
-BFLAGS	= 0
 
 # DIRECTORIES
 
@@ -25,8 +24,7 @@ SRC_DIR 		:= function_to_test \
 				   strlen \
 				   strcpy \
 				   strcmp \
-				   atoi \
-				   infini
+				   atoi
 OBJ_DIR 		:= $(BUILD)/obj
 DIRS			:= $(OBJ_DIR) $(addprefix $(OBJ_DIR)/, $(SRC_DIR))
 
@@ -42,9 +40,7 @@ SRC				:= main.c
 SUB_SRC			:= atoi.c \
 				   strcmp.c \
 				   strcpy.c \
-				   strlen.c \
-				   strdup.c \
-				   infini.c
+				   strlen.c
 SRC				+= $(addprefix function_to_test/, $(SUB_SRC))
 SUB_SRC			:= 00_strlen_launcher.c \
 				   01_strlen_basic_test.c \
@@ -52,8 +48,7 @@ SUB_SRC			:= 00_strlen_launcher.c \
 SRC				+= $(addprefix strlen/, $(SUB_SRC))
 SUB_SRC			:= 00_strcpy_launcher.c \
 				   01_strcpy_basic_test.c \
-				   02_strcpy_bus_test.c \
-				   03_strcpy_abrt_test.c
+				   02_strcpy_bus_test.c
 SRC				+= $(addprefix strcpy/, $(SUB_SRC))
 SUB_SRC			:= 00_strcmp_launcher.c \
 				   01_strcmp_basic_test.c \
@@ -64,12 +59,8 @@ SUB_SRC			:= 00_atoi_launcher.c \
 				   02_atoi_intmax_test.c \
 				   03_atoi_intmin_test.c \
 				   04_atoi_intmax_overflow_test.c \
-				   05_atoi_intmin_overflow_test.c \
-				   06_atoi_divise_by_zero_test.c
+				   05_atoi_intmin_overflow_test.c
 SRC				+= $(addprefix atoi/, $(SUB_SRC))
-SUB_SRC			:= 00_infini_launcher.c \
-				   01_infini_loop_test.c
-SRC				+= $(addprefix infini/, $(SUB_SRC))
 OBJ				:= $(SRC:%.c=$(OBJ_DIR)/%.o)
 
 # ANSCII CODE
@@ -91,7 +82,6 @@ all: $(NAME)
 test: $(NAME)
 
 bonus: MAKEUNIT := $(LUNIT_DIR) bonus
-bonus: BFLAGS = 1
 bonus: $(NAME)
 
 $(NAME): $(OBJ)
@@ -123,4 +113,4 @@ $(BUILD):
 
 $(OBJ_DIR)/%.o:%.c | $(BUILD)
 	@printf "$(CL_LINE)Compiling srcs object : $(B_CYAN)$< $(NONE)...\r"
-	@$(CC) $(CFLAGS) $(IFLAGS) -c $< -o $@ -D BONUS=$(BFLAGS)
+	@$(CC) $(CFLAGS) $(IFLAGS) -c $< -o $@

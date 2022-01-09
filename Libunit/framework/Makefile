@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+         #
+#    By: maddi <maddi@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/08 23:01:02 by kaye              #+#    #+#              #
-#    Updated: 2022/01/09 17:55:49 by kaye             ###   ########.fr        #
+#    Updated: 2022/01/09 20:13:21 by maddi            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,8 @@ DIRS			:= $(OBJ_DIR) $(addprefix $(OBJ_DIR)/, $(SUB_DIR))
 NAME			:= libunit.a
 SRC				:= list.c \
 				   print.c \
-				   run_test.c
+				   run_test.c \
+				   log.c
 SUB_SRC			:= unit_bzero.c \
 				   unit_calloc.c \
 				   unit_strlen.c \

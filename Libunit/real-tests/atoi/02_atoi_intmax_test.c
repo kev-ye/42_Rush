@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   02_atoi_intmax_test.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: maddi <maddi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 17:16:53 by kaye              #+#    #+#             */
-/*   Updated: 2022/01/09 17:17:15 by kaye             ###   ########.fr       */
+/*   Updated: 2022/01/09 19:37:38 by maddi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "tests.h"
+#include "real_tests.h"
 
 int	atoi_intmax_test(void)
 {
-	if (atoi("2147483647") == 2147483647)
+	if (ft_atoi("2147483647") == 2147483647)
 		return (STATUS_SUCCESS);
 	else
 		return (STATUS_FAILURE);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   run_test.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: maddi <maddi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/08 20:09:02 by kaye              #+#    #+#             */
-/*   Updated: 2022/01/09 20:20:43 by kaye             ###   ########.fr       */
+/*   Updated: 2022/01/09 20:12:15 by maddi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -159,6 +159,7 @@ int	launch_tests(void)
 	while (tmp)
 	{
 		print_info(tmp);
+		log_info(tmp);
 		fork_test(tmp);
 		tmp = tmp->next;
 	}
@@ -168,7 +169,5 @@ int	launch_tests(void)
 		ret = STATUS_SUCCESS;
 	print_result();
 	unit_clean();
-	if (BONUS)
-		dprintf(STDOUT_FILENO, ANSCII_BLUE"==================="ANSCII_CLEAR"\n");
 	return (ret);
 }

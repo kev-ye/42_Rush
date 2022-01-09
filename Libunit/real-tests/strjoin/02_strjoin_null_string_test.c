@@ -6,11 +6,11 @@
 /*   By: maddi <maddi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 18:05:46 by maddi             #+#    #+#             */
-/*   Updated: 2022/01/09 18:08:09 by maddi            ###   ########.fr       */
+/*   Updated: 2022/01/09 19:14:16 by maddi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "tests.h"
+#include "real_tests.h"
 
 int	strjoin_null_string_test(void)
 {

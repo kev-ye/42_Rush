@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   02_toupper_invalid_char_test.c                     :+:      :+:    :+:   */
+/*   01_toupper_basic_test.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maddi <maddi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/09 17:50:53 by maddi             #+#    #+#             */
-/*   Updated: 2022/01/09 17:52:19 by maddi            ###   ########.fr       */
+/*   Created: 2022/01/09 17:46:39 by maddi             #+#    #+#             */
+/*   Updated: 2022/01/09 19:21:53 by maddi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "tests.h"
+#include "real_tests.h"
 
-int	toupper_invalid_char_test(void)
+int	toupper_basic_test(void)
 {
-	if (ft_toupper(59) == 59)
+	if (ft_toupper('a') == 'A')
 		return (STATUS_SUCCESS);
 	else
 		return (STATUS_FAILURE);

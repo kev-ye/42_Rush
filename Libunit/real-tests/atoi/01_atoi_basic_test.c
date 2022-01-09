@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   01_atoi_basic_test.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: maddi <maddi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 17:16:07 by kaye              #+#    #+#             */
-/*   Updated: 2022/01/09 17:16:39 by kaye             ###   ########.fr       */
+/*   Updated: 2022/01/09 19:37:36 by maddi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "tests.h"
+#include "real_tests.h"
 
 int	atoi_basic_test(void)
 {
-	if (atoi("42") == 42)
+	if (ft_atoi("42") == 42)
 		return (STATUS_SUCCESS);
 	else
 		return (STATUS_FAILURE);

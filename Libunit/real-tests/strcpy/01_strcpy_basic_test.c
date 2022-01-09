@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   01_strcpy_basic_test.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: maddi <maddi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 15:52:26 by kaye              #+#    #+#             */
-/*   Updated: 2022/01/09 17:07:12 by kaye             ###   ########.fr       */
+/*   Updated: 2022/01/09 19:13:54 by maddi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "tests.h"
+#include "real_tests.h"
 
 int	strcpy_basic_test(void)
 {
