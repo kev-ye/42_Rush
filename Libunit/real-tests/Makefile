@@ -6,7 +6,7 @@
 #    By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/08 22:35:18 by kaye              #+#    #+#              #
-#    Updated: 2022/01/09 13:43:59 by kaye             ###   ########.fr        #
+#    Updated: 2022/01/09 15:30:35 by kaye             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,6 @@
 CC		= clang
 CFLAGS	= -Wall -Wextra -Werror #-g3 -fsanitize=address
 IFLAGS	= -I. -I./libft/inc -I../framework/inc
-BFLAGS	= 0
 
 # DIRECTORIES
 
@@ -31,7 +30,7 @@ DIRS			:= $(OBJ_DIR) $(addprefix $(OBJ_DIR)/, $(SRC_DIR))
 LFT				:= libft.a
 LUNIT			:= libunit.a
 NAME			:= tests
-SRC				= main.c
+SRC				:= main.c
 SUB_SRC			:= 00_strlen_launcher.c \
 				   01_strlen_basic_test.c
 SRC				+= $(addprefix strlen/, $(SUB_SRC))
@@ -88,4 +87,4 @@ $(BUILD):
 
 $(OBJ_DIR)/%.o:%.c | $(BUILD)
 	@printf "$(CL_LINE)Compiling srcs object : $(B_CYAN)$< $(NONE)...\r"
-	@$(CC) $(CFLAGS) $(IFLAGS) -c $< -o $@ -D BONUS=$(BFLAGS)
+	@$(CC) $(CFLAGS) $(IFLAGS) -c $< -o $@

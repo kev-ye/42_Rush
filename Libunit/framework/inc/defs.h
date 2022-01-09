@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/08 16:50:09 by kaye              #+#    #+#             */
-/*   Updated: 2022/01/08 21:57:49 by kaye             ###   ########.fr       */
+/*   Updated: 2022/01/09 15:41:27 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,11 @@
 # define ANSCII_BLUE "\033[1;34m"
 # define ANSCII_PURPLE "\033[1;35m"
 # define ANSCII_CYAN "\033[1;36m"
+
+/**
+ * @brief PUTNBR BUFFER SIZE
+ */
+# define BUFFER_SIZE_PN 11
 
 /**
  * @brief boolean define

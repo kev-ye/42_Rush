@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/08 19:09:06 by kaye              #+#    #+#             */
-/*   Updated: 2022/01/08 22:20:23 by kaye             ###   ########.fr       */
+/*   Updated: 2022/01/09 16:23:06 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	load_test(
 	t_test	*tmp;
 
 	new_test = create_new_test(func_name, test_name, func);
-	ptr = unit_singleton();
+	ptr = unit_singleton(FALSE);
 	if (NULL == ptr->test)
 	{
 		ptr->test = new_test;
@@ -57,7 +57,7 @@ void	clean_tests(void)
 	t_test	*tmp;
 	t_test	*to_free;
 
-	ptr = unit_singleton();
+	ptr = unit_singleton(FALSE);
 	tmp = ptr->test;
 	while (tmp)
 	{
@@ -66,4 +66,5 @@ void	clean_tests(void)
 		free(to_free);
 		to_free = NULL;
 	}
+	ptr->test = NULL;
 }

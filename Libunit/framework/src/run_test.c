@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/08 20:09:02 by kaye              #+#    #+#             */
-/*   Updated: 2022/01/08 23:31:33 by kaye             ###   ########.fr       */
+/*   Updated: 2022/01/09 16:13:03 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ typedef struct s_info
 static const t_info	g_info[STATUS_MAX] = {
 	{STATUS_OK, "OK"},
 	{STATUS_KO, "KO"},
-	{STATUS_SIGSEGV, "SIGSEGV"},
-	{STATUS_SIGBUS, "SIGBUS"}
+	{STATUS_SIGSEGV, "SEGV"},
+	{STATUS_SIGBUS, "BUS"}
 };
 
 static void	handle_info(int status)
@@ -31,7 +31,7 @@ static void	handle_info(int status)
 	int	i;
 
 	i = 0;
-	ptr = unit_singleton();
+	ptr = unit_singleton(FALSE);
 	while (i < STATUS_MAX)
 	{
 		if (g_info[i].status == status)
@@ -40,7 +40,9 @@ static void	handle_info(int status)
 				++ptr->info.result_success;
 			else
 				++ptr->info.result_failure;
-			unit_putendl_fd(g_info[i].status_msg, STDOUT_FILENO);
+			unit_putstr_fd("[", STDOUT_FILENO);	
+			unit_putstr_fd(g_info[i].status_msg, STDOUT_FILENO);	
+			unit_putendl_fd("]", STDOUT_FILENO);
 			return ;
 		}
 		++i;
@@ -94,7 +96,7 @@ int	launch_tests(void)
 	t_test	*tmp;
 	int		ret;
 
-	ptr = unit_singleton();
+	ptr = unit_singleton(FALSE);
 	tmp = ptr->test;
 	while (tmp)
 	{
@@ -106,6 +108,7 @@ int	launch_tests(void)
 		ret = STATUS_SUCCESS;
 	else
 		ret = STATUS_FAILURE;
+	print_result();
 	unit_clean();
 	return (ret);
 }

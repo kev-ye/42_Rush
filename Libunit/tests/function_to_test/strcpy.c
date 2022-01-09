@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   unit_singleton.c                                   :+:      :+:    :+:   */
+/*   strcpy.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/08 19:17:32 by kaye              #+#    #+#             */
-/*   Updated: 2022/01/09 16:12:24 by kaye             ###   ########.fr       */
+/*   Created: 2022/01/09 15:18:19 by kaye              #+#    #+#             */
+/*   Updated: 2022/01/09 15:18:26 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libunit.h"
+#include "function.h"
 
-t_unit	*unit_singleton(BOOL free_flag)
+char	*ft_strcpy(char *dst, const char *src)
 {
-	static t_unit	*singleton = NULL;
+	int	i;
 
-	if (NULL == singleton)
+	i = 0;
+	while (src[i])
 	{
-		singleton = unit_calloc(1, sizeof(t_unit));
-		if (NULL == singleton)
-			exit(STATUS_FAILURE);
+		dst[i] = src[i];
+		i++;
 	}
-	if (free_flag == TRUE)
-	{
-		free(singleton);
-		singleton = NULL;
-	}
-	return (singleton);
+	dst[i] = '\0';
+	return (dst);
 }

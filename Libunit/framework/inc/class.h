@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/08 17:11:05 by kaye              #+#    #+#             */
-/*   Updated: 2022/01/08 22:09:19 by kaye             ###   ########.fr       */
+/*   Updated: 2022/01/09 16:22:59 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ typedef struct s_test
 	char const		*func_name;
 	char const		*test_name;
 	int				(*func)(void);
-	char			*status;
 	struct s_test	*next;
 }	t_test;
 

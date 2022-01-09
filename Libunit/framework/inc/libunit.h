@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/08 16:50:12 by kaye              #+#    #+#             */
-/*   Updated: 2022/01/08 23:12:05 by kaye             ###   ########.fr       */
+/*   Updated: 2022/01/09 16:11:44 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,20 @@ void	clean_tests(void);
 int		launch_tests(void);
 
 /** 
+ * @brief print
+ */
+void	print_result(void);
+
+/** 
  * @brief utils
  */
 size_t	unit_strlen(const char *s);
 void	unit_putstr_fd(char const *s, int fd);
 void	unit_putendl_fd(char const *s, int fd);
+void	unit_putnbr_fd(int n, int fd);
 void	unit_bzero(void *s, size_t n);
 void	*unit_calloc(size_t count, size_t size);
-t_unit	*unit_singleton(void);
+t_unit	*unit_singleton(BOOL free_flag);
 void	unit_clean(void);
 
 #endif

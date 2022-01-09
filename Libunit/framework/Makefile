@@ -6,7 +6,7 @@
 #    By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/08 23:01:02 by kaye              #+#    #+#              #
-#    Updated: 2022/01/09 13:43:42 by kaye             ###   ########.fr        #
+#    Updated: 2022/01/09 15:43:40 by kaye             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,13 +28,15 @@ DIRS			:= $(OBJ_DIR) $(addprefix $(OBJ_DIR)/, $(SUB_DIR))
 # FILES
 
 NAME			:= libunit.a
-SRC				= list.c \
+SRC				:= list.c \
+				   print.c \
 				   run_test.c
 SUB_SRC			:= unit_bzero.c \
 				   unit_calloc.c \
 				   unit_strlen.c \
 				   unit_putstr_fd.c \
 				   unit_putendl_fd.c \
+				   unit_putnbr_fd.c \
 				   unit_singleton.c \
 				   unit_clean.c
 SRC				+= $(addprefix utils/, $(SUB_SRC))

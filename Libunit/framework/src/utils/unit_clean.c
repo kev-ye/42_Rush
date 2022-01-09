@@ -6,7 +6,7 @@
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/08 22:03:33 by kaye              #+#    #+#             */
-/*   Updated: 2022/01/08 22:20:30 by kaye             ###   ########.fr       */
+/*   Updated: 2022/01/09 16:31:32 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,13 @@ void	unit_clean(void)
 {
 	t_unit	*ptr;
 
-	ptr = unit_singleton();
+	ptr = unit_singleton(FALSE);
 	if (ptr)
 	{
 		clean_tests();
-		free(ptr);
-		ptr = NULL;
+		unit_bzero(ptr, sizeof(t_unit));
+		unit_singleton(TRUE);
+		// free(ptr);
+		// ptr = NULL;
 	}
 }

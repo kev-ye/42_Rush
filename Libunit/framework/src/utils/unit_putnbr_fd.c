@@ -1,31 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   unit_singleton.c                                   :+:      :+:    :+:   */
+/*   unit_putnbr_fd.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/08 19:17:32 by kaye              #+#    #+#             */
-/*   Updated: 2022/01/09 16:12:24 by kaye             ###   ########.fr       */
+/*   Created: 2022/01/09 15:40:09 by kaye              #+#    #+#             */
+/*   Updated: 2022/01/09 15:44:39 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libunit.h"
 
-t_unit	*unit_singleton(BOOL free_flag)
+void	unit_putnbr_fd(int n, int fd)
 {
-	static t_unit	*singleton = NULL;
+	char			buffer[BUFFER_SIZE_PN];
+	unsigned int	nbr;
+	size_t			i;
 
-	if (NULL == singleton)
+	if (n < 0)
+		nbr = -n;
+	else
+		nbr = n;
+	i = BUFFER_SIZE_PN;
+	while (nbr || i == BUFFER_SIZE_PN)
 	{
-		singleton = unit_calloc(1, sizeof(t_unit));
-		if (NULL == singleton)
-			exit(STATUS_FAILURE);
+		buffer[--i] = nbr % 10 + '0';
+		nbr /= 10;
 	}
-	if (free_flag == TRUE)
-	{
-		free(singleton);
-		singleton = NULL;
-	}
-	return (singleton);
+	if (n < 0)
+		buffer[--i] = '-';
+	write(fd, buffer + i, BUFFER_SIZE_PN - i);
 }

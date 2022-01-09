@@ -1,31 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   unit_singleton.c                                   :+:      :+:    :+:   */
+/*   00_strcpy_launcher.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/08 19:17:32 by kaye              #+#    #+#             */
-/*   Updated: 2022/01/09 16:12:24 by kaye             ###   ########.fr       */
+/*   Created: 2022/01/09 15:47:26 by kaye              #+#    #+#             */
+/*   Updated: 2022/01/09 15:53:59 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libunit.h"
+#include "tests.h"
 
-t_unit	*unit_singleton(BOOL free_flag)
+int	strcpy_launcher(void)
 {
-	static t_unit	*singleton = NULL;
-
-	if (NULL == singleton)
-	{
-		singleton = unit_calloc(1, sizeof(t_unit));
-		if (NULL == singleton)
-			exit(STATUS_FAILURE);
-	}
-	if (free_flag == TRUE)
-	{
-		free(singleton);
-		singleton = NULL;
-	}
-	return (singleton);
+	load_test("strcpy", "basic test", &strcpy_basic_test);
+	load_test("strcpy", "bus test", &strcpy_bus_test);
+	return (launch_tests());
 }

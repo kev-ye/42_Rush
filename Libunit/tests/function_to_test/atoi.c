@@ -1,31 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   unit_singleton.c                                   :+:      :+:    :+:   */
+/*   atoi.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/08 19:17:32 by kaye              #+#    #+#             */
-/*   Updated: 2022/01/09 16:12:24 by kaye             ###   ########.fr       */
+/*   Created: 2022/01/09 15:17:35 by kaye              #+#    #+#             */
+/*   Updated: 2022/01/09 15:32:29 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libunit.h"
+#include "function.h"
 
-t_unit	*unit_singleton(BOOL free_flag)
+static int	ft_isdigit(int c)
 {
-	static t_unit	*singleton = NULL;
+	return (c >= 48 && c <= 57);
+}
 
-	if (NULL == singleton)
+
+int	ft_atoi(const char *str)
+{
+	int	signe;
+	int	res;
+
+	signe = 1;
+	res = 0;
+	while (*str && ((*str >= '\t' && *str <= '\r') || (*str == ' ')))
+		str++;
+	if (*str == '-' || *str == '+')
 	{
-		singleton = unit_calloc(1, sizeof(t_unit));
-		if (NULL == singleton)
-			exit(STATUS_FAILURE);
+		if (*str == '-')
+			signe = -1;
+		++str;
 	}
-	if (free_flag == TRUE)
+	while (*str && ft_isdigit(*str))
 	{
-		free(singleton);
-		singleton = NULL;
+		res = res * 10 + *str - '0';
+		++str;
 	}
-	return (singleton);
+	return (res * signe);
 }

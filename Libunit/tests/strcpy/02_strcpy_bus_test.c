@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   unit_singleton.c                                   :+:      :+:    :+:   */
+/*   02_strcpy_bus_test.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/08 19:17:32 by kaye              #+#    #+#             */
-/*   Updated: 2022/01/09 16:12:24 by kaye             ###   ########.fr       */
+/*   Created: 2022/01/09 15:47:58 by kaye              #+#    #+#             */
+/*   Updated: 2022/01/09 15:58:50 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libunit.h"
+#include "tests.h"
 
-t_unit	*unit_singleton(BOOL free_flag)
+int	strcpy_bus_test(void)
 {
-	static t_unit	*singleton = NULL;
+	char		*buffer1;
+	char		*buffer2;
+	char		*cpy;
 
-	if (NULL == singleton)
-	{
-		singleton = unit_calloc(1, sizeof(t_unit));
-		if (NULL == singleton)
-			exit(STATUS_FAILURE);
-	}
-	if (free_flag == TRUE)
-	{
-		free(singleton);
-		singleton = NULL;
-	}
-	return (singleton);
+	buffer1 = "";
+	buffer2 = "hello";
+	cpy = ft_strcpy(buffer1, buffer2);
+	if (ft_strcmp(cpy, "hello") == 0)
+		return (STATUS_SUCCESS);
+	else
+		return (STATUS_FAILURE);
 }

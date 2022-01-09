@@ -1,31 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   unit_singleton.c                                   :+:      :+:    :+:   */
+/*   strcmp.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/08 19:17:32 by kaye              #+#    #+#             */
-/*   Updated: 2022/01/09 16:12:24 by kaye             ###   ########.fr       */
+/*   Created: 2022/01/09 15:18:44 by kaye              #+#    #+#             */
+/*   Updated: 2022/01/09 15:18:51 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libunit.h"
+#include "function.h"
 
-t_unit	*unit_singleton(BOOL free_flag)
+int	ft_strcmp(const char *s1, const char *s2)
 {
-	static t_unit	*singleton = NULL;
+	int	i;
 
-	if (NULL == singleton)
-	{
-		singleton = unit_calloc(1, sizeof(t_unit));
-		if (NULL == singleton)
-			exit(STATUS_FAILURE);
-	}
-	if (free_flag == TRUE)
-	{
-		free(singleton);
-		singleton = NULL;
-	}
-	return (singleton);
+	i = 0;
+	while ((s1[i] || s2[i]) && (s1[i] == s2[i]))
+		i++;
+	return (s1[i] - s2[i]);
 }
