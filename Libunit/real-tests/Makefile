@@ -6,7 +6,7 @@
 #    By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/09 15:19:17 by kaye              #+#    #+#              #
-#    Updated: 2022/01/09 21:44:22 by kaye             ###   ########.fr        #
+#    Updated: 2022/01/10 01:07:36 by kaye             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,6 +29,7 @@ SRC_DIR 		:= atoi \
 				   strcmp \
 				   strcpy \
 				   strjoin \
+				   strtrim \
 				   toupper
 OBJ_DIR 		:= $(BUILD)/obj
 DIRS			:= $(OBJ_DIR) $(addprefix $(OBJ_DIR)/, $(SRC_DIR))
@@ -70,6 +71,11 @@ SUB_SRC			:= 00_toupper_launcher.c \
 				   01_toupper_basic_test.c \
 				   02_toupper_invalid_char_test.c
 SRC				+= $(addprefix toupper/, $(SUB_SRC))
+SUB_SRC			:= 00_strtrim_launcher.c \
+				   01_strtrim_basic_test.c \
+				   02_strtrim_set_in_str_test.c \
+				   03_strtrim_null_string_test.c
+SRC				+= $(addprefix strtrim/, $(SUB_SRC))
 OBJ				:= $(SRC:%.c=$(OBJ_DIR)/%.o)
 
 # ANSCII CODE
@@ -89,17 +95,14 @@ B_CYAN 			= \033[1;36m
 all: $(NAME)
 
 test: $(NAME)
+	./real_tests
 
 bonus: MAKEUNIT := $(LUNIT_DIR) bonus
 bonus: BFLAGS = 1
 bonus: $(NAME)
 
-$(NAME): $(OBJ)
+$(NAME): $(OBJ) $(LFT_DIR)/$(LFT) $(LUNIT_DIR)/$(LUNIT)
 	@printf "$(CL_LINE)"
-	@echo "$(B_BLUE)>>> Libft$(NONE)"
-	@$(MAKE) -C $(MAKELFT)
-	@echo "$(B_BLUE)>>> Libunit$(NONE)"
-	@$(MAKE) -C $(MAKEUNIT)
 	@echo "$(B_BLUE)>>> Tests$(NONE)"
 	@$(CC) $(CFLAGS) $(IFLAGS) $(OBJ) -o $@ $(LFLAGS)
 	@echo "[1 / 1] - $(B_MAGENTA)$@$(NONE)"
@@ -123,6 +126,16 @@ re: fclean test
 $(BUILD):
 	@mkdir $@ $(DIRS)
 
-$(OBJ_DIR)/%.o:%.c ../$(LUNIT_DIR)/$(LUNIT) ../$(LFT_DIR)/$(LFT) | $(BUILD)
+$(OBJ_DIR)/%.o:%.c | $(BUILD)
 	@printf "$(CL_LINE)Compiling srcs object : $(B_CYAN)$< $(NONE)...\r"
 	@$(CC) $(CFLAGS) $(IFLAGS) -c $< -o $@ -D BONUS=$(BFLAGS)
+
+$(LFT_DIR)/$(LFT):
+	@printf "$(CL_LINE)"
+	@echo "$(B_BLUE)>>> Libft$(NONE)"
+	@$(MAKE) -C $(MAKELFT)
+
+$(LUNIT_DIR)/$(LUNIT):
+	@printf "$(CL_LINE)"
+	@echo "$(B_BLUE)>>> Libunit$(NONE)"
+	@$(MAKE) -C $(MAKEUNIT)

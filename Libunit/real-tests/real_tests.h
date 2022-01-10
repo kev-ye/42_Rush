@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   real_tests.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: maddi <maddi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/08 22:29:00 by kaye              #+#    #+#             */
-/*   Updated: 2022/01/09 21:05:26 by kaye             ###   ########.fr       */
+/*   Updated: 2022/01/09 21:56:01 by maddi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,4 +68,11 @@ int	strjoin_empty_string_test(void);
 int	strchr_launcher(void);
 int	strchr_basic_test(void);
 
+/**
+ * @brief toupper tests
+*/
+int	strtrim_launcher(void);
+int	strtrim_basic_test(void);
+int	strtrim_null_string_test(void);
+int	strtrim_set_in_str_test(void);
 #endif

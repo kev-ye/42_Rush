@@ -6,7 +6,7 @@
 #    By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/09 15:19:17 by kaye              #+#    #+#              #
-#    Updated: 2022/01/09 21:44:52 by kaye             ###   ########.fr        #
+#    Updated: 2022/01/10 01:04:28 by kaye             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -89,15 +89,14 @@ B_CYAN 			= \033[1;36m
 all: $(NAME)
 
 test: $(NAME)
+	-./tests 2>/dev/null
 
 bonus: MAKEUNIT := $(LUNIT_DIR) bonus
 bonus: BFLAGS = 1
 bonus: $(NAME)
 
-$(NAME): $(OBJ)
+$(NAME): $(OBJ) $(LUNIT_DIR)/$(LUNIT)
 	@printf "$(CL_LINE)"
-	@echo "$(B_BLUE)>>> Libunit$(NONE)"
-	@$(MAKE) -C $(MAKEUNIT)
 	@echo "$(B_BLUE)>>> Tests$(NONE)"
 	@$(CC) $(CFLAGS) $(IFLAGS) $(OBJ) -o $@ $(LFLAGS)
 	@echo "[1 / 1] - $(B_MAGENTA)$@$(NONE)"
@@ -112,13 +111,18 @@ fclean: clean
 	@rm -Rf $(NAME)
 	@echo "$(B_RED)$(NAME)$(NONE) : $(B_GREEN)Delete$(NONE)"
 
-re: fclean test
+re: fclean all
 
 .PHONY: all test clean fclean re
 
 $(BUILD):
 	@mkdir $@ $(DIRS)
 
-$(OBJ_DIR)/%.o:%.c ../$(LUNIT_DIR)/$(LUNIT) | $(BUILD)
+$(OBJ_DIR)/%.o:%.c | $(BUILD)
 	@printf "$(CL_LINE)Compiling srcs object : $(B_CYAN)$< $(NONE)...\r"
 	@$(CC) $(CFLAGS) $(IFLAGS) -c $< -o $@ -D BONUS=$(BFLAGS)
+
+$(LUNIT_DIR)/$(LUNIT):
+	@printf "$(CL_LINE)"
+	@echo "$(B_BLUE)>>> Libunit$(NONE)"
+	@$(MAKE) -C $(MAKEUNIT)
